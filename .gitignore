@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+
+# R / RStudio
+.Rhistory
+.RData
+.Rproj.user/
+
+# Large sequencing and QIIME2 files
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.qza
+*.qzv
+*.biom
+*.rds
+*.RDS
+
+# Large figures
+*.tiff
+*.tif
+*.png
+*.pdf
+
+# Temporary files
+*.tmp
+*.log
