@@ -22,9 +22,6 @@ code/
 metadata/
   metadata_16S_clean.tsv
   metadata_ITS_clean.tsv
-
-docs/
-  Additional documentation.
 ```
 
 ## Data availability
