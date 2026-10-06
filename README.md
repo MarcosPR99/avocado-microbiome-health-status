@@ -1,6 +1,6 @@
 # Avocado-associated microbiome responses to fungal disease
 
-This repository contains analysis scripts, cleaned metadata and processed output folders associated with the manuscript:
+This repository contains the analysis scripts and cleaned metadata associated with the manuscript:
 
 **Fungal diseases reshape avocado-associated multi-kingdom microbiomes through compartment-specific restructuring and network rewiring**
 
@@ -23,28 +23,21 @@ metadata/
   metadata_16S_clean.tsv
   metadata_ITS_clean.tsv
 
-processed_tables/
-  Processed output tables used for downstream analyses.
-
-supplementary_tables/
-  Supplementary tables associated with the manuscript.
-
 docs/
   Additional documentation.
+```
 
 ## Data availability
 
 Raw 16S rRNA gene and ITS amplicon sequencing reads are not included in this repository.
 
-Raw reads will be deposited in a public sequence archive and cited in the manuscript using the corresponding BioProject accession number.
-
-**Raw sequencing reads:** accession pending.
+Raw reads have been deposited in the NCBI Sequence Read Archive under BioProject accession **PRJNA1540021**.
 
 ## Code availability
 
 This repository contains the scripts used for QIIME2-based processing and downstream analyses in R.
 
-A permanent archived version of this repository will be generated through Zenodo after the final version of the code and tables is available.
+A permanent archived version of this repository will be generated through Zenodo after the final version of the code and metadata is available.
 
 **Archived code DOI:** pending.
 
@@ -75,7 +68,8 @@ Large sequencing and analysis files are not tracked in this repository, includin
 - FASTQ files
 - QIIME2 `.qza` and `.qzv` files
 - R serialized objects such as `.rds` or `.RDS`
-- large figure files
+- manuscript figure files
+- supplementary table files submitted separately to the journal
 
 ## License
 
