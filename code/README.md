@@ -60,6 +60,28 @@ Scripts:
 
 The ITS preprocessing script documents the same import, quality summary and trimming structure used for 16S. Primer sequences should be checked against the original ITS run configuration before re-running from raw FASTQ files.
 
+## Cross-kingdom network workflow
+
+Cross-kingdom co-association networks were inferred from combined October 16S rRNA gene and ITS abundance tables using SparCC and analysed with NetworkX.
+
+Script:
+
+```text
+05_network_analysis.py
+```
+
+This script documents the preparation of ASV-level and genus-level cross-kingdom input tables, SparCC execution, edge filtering and network metric calculation.
+
+The network workflow includes:
+
+```text
+combined October 16S + ITS tables
+→ ASV-level and genus-level cross-kingdom input tables
+→ SparCC correlations and two-sided pseudo-P-values
+→ edge filtering
+→ network metric calculation with NetworkX
+```
+
 ## Notes
 
 Some scripts were originally run in local or high-performance computing environments. File paths may need to be adapted before re-running the analyses on a different system.
