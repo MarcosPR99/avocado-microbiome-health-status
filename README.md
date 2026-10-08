@@ -10,6 +10,8 @@ The study analyses bacterial 16S rRNA gene and fungal ITS amplicon datasets from
 
 ```text
 code/
+  00_16S_import_quality_trimming.sh
+  00_ITS_import_quality_trimming.sh
   01a_16S_dada2_denoising.sh
   01b_16S_alignment_mafft.sh
   01c_16S_alignment_mask.sh
@@ -18,6 +20,8 @@ code/
   02_ITS_import_to_phyloseq.R
   03_16S_downstream_analysis.R
   04_ITS_downstream_analysis.R
+  05_network_analysis.py
+  README.md
 
 metadata/
   metadata_16S_clean.tsv
@@ -32,7 +36,7 @@ Raw reads have been deposited in the NCBI Sequence Read Archive under BioProject
 
 ## Code availability
 
-This repository contains the scripts used for QIIME2-based processing and downstream analyses in R.
+This repository contains the scripts used for QIIME2-based processing, downstream analyses in R, and cross-kingdom network analysis in Python.
 
 A permanent archived version of this repository will be generated through Zenodo after the final version of the code and metadata is available.
 
@@ -40,7 +44,7 @@ A permanent archived version of this repository will be generated through Zenodo
 
 ## Software requirements
 
-The analyses were performed using QIIME2 and R.
+The analyses were performed using QIIME2, R and Python.
 
 Main R packages used across the analysis scripts include:
 
@@ -55,6 +59,8 @@ Main R packages used across the analysis scripts include:
 - ape
 - DESeq2
 - multcompView
+
+The cross-kingdom network analysis used SparCC, Python 3.8.16 and NetworkX 3.1.
 
 Some scripts were originally run in local or high-performance computing environments. File paths may need to be adapted before re-running the analyses on a different system.
 
