@@ -48,7 +48,7 @@ The scripts in `code/` cover QIIME 2-based read processing, bacterial and fungal
 
 Analyses use QIIME 2, R (including phyloseq, vegan and DESeq2), and Python (including NetworkX). Versions and analytical parameters are documented in the manuscript and associated scripts.
 
-Some scripts rely on intermediate QIIME 2 archives or phyloseq RDS objects not stored here and may require path adjustments or regeneration of intermediate inputs before execution. The scripts have not all been independently rerun from raw reads in this repository.
+Some scripts rely on intermediate QIIME 2 archives or phyloseq RDS objects not stored here and may require path adjustments or regeneration of intermediate inputs before execution.
 
 ## Raw sequencing data
 
