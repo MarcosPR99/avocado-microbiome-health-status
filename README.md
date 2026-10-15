@@ -1,14 +1,24 @@
 # Avocado-associated microbiome responses to fungal disease
 
-This repository contains the analysis scripts and cleaned metadata associated with the manuscript:
+This repository contains processed amplicon sequencing data, sample metadata, and analysis scripts associated with the manuscript:
 
 **Fungal diseases reshape avocado-associated multi-kingdom microbiomes through compartment-specific restructuring and network rewiring**
 
-The study analyses bacterial 16S rRNA gene and fungal ITS amplicon datasets from avocado-associated compartments, including bulk soil, rhizosphere, root endosphere and phyllosphere, comparing healthy and diseased avocado trees.
+The study examines bacterial 16S rRNA gene and fungal ITS communities in avocado-associated compartments (bulk soil, rhizosphere, root endosphere, and phyllosphere), comparing healthy and symptomatic trees.
 
 ## Repository structure
 
 ```text
+data/
+  16S_ASV_table.tsv.gz
+  16S_taxonomy.tsv
+  ITS_ASV_table.tsv
+  ITS_taxonomy.tsv
+
+metadata/
+  metadata_16S_clean.tsv
+  metadata_ITS_clean.tsv
+
 code/
   00_16S_import_quality_trimming.sh
   00_ITS_import_quality_trimming.sh
@@ -22,58 +32,28 @@ code/
   04_ITS_downstream_analysis.R
   05_network_analysis.py
   README.md
-
-metadata/
-  metadata_16S_clean.tsv
-  metadata_ITS_clean.tsv
 ```
 
-## Data availability
+## Processed data
 
-Raw 16S rRNA gene and ITS amplicon sequencing reads are not included in this repository.
+- `data/16S_ASV_table.tsv.gz`: bacterial ASV count table (gzip-compressed TSV).
+- `data/16S_taxonomy.tsv`: bacterial ASV taxonomic assignments.
+- `data/ITS_ASV_table.tsv`: fungal ASV count table.
+- `data/ITS_taxonomy.tsv`: fungal ASV taxonomic assignments.
+- `metadata/metadata_16S_clean.tsv` and `metadata/metadata_ITS_clean.tsv`: sample metadata.
 
-Raw reads have been deposited in the NCBI Sequence Read Archive under BioProject accession **PRJNA1540021**.
+## Analysis code
 
-## Code availability
+The scripts in `code/` cover QIIME 2-based read processing, bacterial and fungal downstream analyses in R, and cross-kingdom SparCC/NetworkX network analyses in Python. See `code/README.md` for workflow details.
 
-This repository contains the scripts used for QIIME2-based processing, downstream analyses in R, and cross-kingdom network analysis in Python.
+Analyses use QIIME 2, R (including phyloseq, vegan and DESeq2), and Python (including NetworkX). Versions and analytical parameters are documented in the manuscript and associated scripts.
 
-A permanent archived version of this repository will be generated through Zenodo after the final version of the code and metadata is available.
+Some scripts rely on intermediate QIIME 2 archives or phyloseq RDS objects not stored here and may require path adjustments or regeneration of intermediate inputs before execution. The scripts have not all been independently rerun from raw reads in this repository.
 
-**Archived code DOI:** pending.
+## Raw sequencing data
 
-## Software requirements
-
-The analyses were performed using QIIME2, R and Python.
-
-Main R packages used across the analysis scripts include:
-
-- phyloseq
-- vegan
-- tidyverse
-- dplyr
-- tidyr
-- readr
-- ggplot2
-- patchwork
-- ape
-- DESeq2
-- multcompView
-
-The cross-kingdom network analysis used SparCC, Python 3.8.16 and NetworkX 3.1.
-
-Some scripts were originally run in local or high-performance computing environments. File paths may need to be adapted before re-running the analyses on a different system.
-
-## Large files
-
-Large sequencing and analysis files are not tracked in this repository, including:
-
-- FASTQ files
-- QIIME2 `.qza` and `.qzv` files
-- R serialized objects such as `.rds` or `.RDS`
-- manuscript figure files
-- supplementary table files submitted separately to the journal
+Raw 16S rRNA gene and ITS amplicon reads have been deposited in the NCBI Sequence Read Archive under BioProject accession **PRJNA1540021**. Raw FASTQ files are not duplicated in this repository.
 
 ## License
 
-The analysis code in this repository is released under the MIT License.
+Analysis code is released under the MIT License.
